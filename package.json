@@ -1,0 +1,56 @@
+{
+  "name": "typescript-library-template",
+  "version": "1.0.0",
+  "description": "Template for creating a new JavaScript library written in TypeScript.",
+  "main": "dist/typescript-library-template.cjs.js",
+  "module": "dist/typescript-library-template.esm.js",
+  "browser": "dist/typescript-library-template.iife.js",
+  "types": "dist/types/main.d.ts",
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:js": "rollup -c",
+    "build": "rimraf dist && npm run build:types && npm run build:js",
+    "test": "jest",
+    "lint": "eslint ./src --ext .js,.ts"
+  },
+  "files": [
+    "/dist",
+    "README.md",
+    "package.json",
+    "LICENSE"
+  ],
+  "author": "Koen Kamman",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KoenKamman/typescript-library-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KoenKamman/typescript-library-template/issues"
+  },
+  "homepage": "https://github.com/KoenKamman/typescript-library-template#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.10.5",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
+    "@rollup/plugin-babel": "^5.1.0",
+    "@rollup/plugin-commonjs": "^14.0.0",
+    "@rollup/plugin-node-resolve": "^8.4.0",
+    "@types/jest": "^26.0.5",
+    "@typescript-eslint/eslint-plugin": "^3.6.1",
+    "@typescript-eslint/parser": "^3.6.1",
+    "eslint": "^7.5.0",
+    "jest": "^26.1.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.22.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-terser": "^6.1.0",
+    "ts-jest": "^26.1.3",
+    "typescript": "^3.9.7"
+  }
+}
